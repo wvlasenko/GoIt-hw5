@@ -8,6 +8,12 @@ html {
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 ul,
 ol {
   list-style: none;
@@ -31,7 +37,7 @@ a {
   overflow: hidden;
   border: 0;
   padding: 0;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   margin: -1px;
 }
@@ -109,7 +115,7 @@ body {
 /* slider decorate */
 
 .containerForSlider {
-  width: 1600px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -120,7 +126,7 @@ body {
 .slider::after {
   content: "";
   display: table;
-  width: 1600px;
+  width: 100%;
   top: 0;
   bottom: 0;
   position: absolute;
@@ -183,7 +189,7 @@ h1 {
 /* collection decorate */
 
 .collection-wrapper {
-  width: 1600px;
+  width: 100%;
   margin: 0 auto;
   background-color: #e9f0fd;
   padding-bottom: 100px;
@@ -217,6 +223,9 @@ h1 {
 .product__item {
   width: 255px;
   float: left;
+}
+
+.product_img_wripper {
   position: relative;
 }
 
@@ -247,7 +256,6 @@ h1 {
   padding: 5px 0px;
   padding-left: 14px;
   background-color: #323232;
-  margin: 0px;
   font-size: 18px;
   color: #ffffff;
   font-family: "Roboto";
@@ -268,8 +276,8 @@ h1 {
 /* overlay  decorate */
 
 .overlay {
-  width: 255px;
-  height: 282px;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
@@ -283,7 +291,7 @@ h1 {
   display: block;
 }
 
-.overlay__list-item-link {
+.overlay__list-item-btn {
   display: block;
   border-width: 1px;
   border-color: rgb(255, 255, 255);
@@ -292,23 +300,26 @@ h1 {
   height: 50px;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.overlay__list-item-link_heart {
+.overlay__list-item-btn_heart {
   background-image: url(../img/icon/heart_.png);
 }
 
-.overlay__list-item-link_arrows {
+.overlay__list-item-btn_arrows {
   background-image: url(../img/icon/arrows.png);
 }
 
-.overlay__list-item-link_clock {
+.overlay__list-item-btn_clock {
   background-image: url(../img/icon/clock.png);
 }
 
-.overlay__list-item-link_basket {
+.overlay__list-item-btn_basket {
   width: 166px;
   background-image: url(../img/icon/basket_mrg.png);
+  background-color: #323232;
 }
 
 .overley__list-item {
@@ -331,19 +342,15 @@ h1 {
   width: 166px;
 }
 
-.overley__list-item:not(:last-child):hover {
+.overley__list-item :hover {
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
 
-.overlay__list-item-link_basket:hover {
-  background-color: #323232;
-}
-
 .footer__box {
-  width: 1600px;
+  width: 100%;
   margin: 0 auto;
-  background-color: #323232;;
+  background-color: #323232;
   text-align: center;
   font-family: "Open Sans";
   color: #fefefe;
